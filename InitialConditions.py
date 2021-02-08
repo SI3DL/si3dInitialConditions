@@ -11,6 +11,8 @@ import sys
 import os
 import datetime
 import numpy as np
+import pandas as pd
+import datetime as Dt
 import matplotlib.pyplot as plt
 import scipy.io as spio
 
@@ -36,7 +38,7 @@ LakeName = 'Stratification 1 for canonical basin'
 SimStartDate = '2018-05-26 00:00:00'
 TimeZone = 'America/Los_Angeles'
 # Define depth of lake
-H = 100 #[m] deep
+H = 500 #[m] deep
 # Chosse number of tracers
 NTracers = 0
 # Chose the type of thickness in layers and the profile of temperature in the vertical direction. Options are 'constant' and 'variable'
@@ -61,8 +63,19 @@ elif DeltaZ == 'variable':
 if TempProf == 'constant':
     Tc = 15 #[C] Temperature of whole water column
 elif TempProf == 'variable':
-    z_CTD = np.arange(0,50,2)
-    T_CTD = np.arange(15,5,(5-15)/25)
+    PathFile = "G:/My Drive/Lake_Tahoe/Projects/Upwelling_3DModel/CTD_data/Processed_0"
+    FileName = 'LakeTahoe_CTD.csv'
+    os.chdir(PathFile)
+    data = pd.read_csv(FileName)
+    z_CTD = data['depth'].to_numpy()
+    T_CTD = data['T'].to_numpy()
+    del data
+    if np.max(z_CTD) < H/2:
+        z_CTD = np.append(z_CTD,(H/2,H))
+        T_CTD = np.append(T_CTD,(T_CTD[-1],T_CTD[-1]))
+    elif np.max(z_CTD) > H/2 and np.max(z_CTD) < H:
+        z_CTD = np.append(z_CTD,H)
+        T_CTD = np.append(T_CTD,T_CTD[-1])
 
 
 # -------------- Beginning of code to create initial condition file --------------------
