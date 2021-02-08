@@ -18,7 +18,7 @@ import scipy.io as spio
 
 # Import functions
 root = "C://Users/"
-user = "SV"
+user = "Sergio"
 func = "/Documents/Github/si3dInputs/"
 FuncPath = root + user + func
 sys.path.append(FuncPath)
@@ -26,19 +26,19 @@ from si3dInputs import initCond4si3d
 del root, user, func, FuncPath
 
 # --------------------- User variables declaration ----------------------------
-root = "G:/My Drive"
-PathProject = "/Lake_Tahoe/Projects/RotationalWeddeburnNumber/"
+root = "S:/"
+PathProject = "si3D/"
 # Chose the name of folder for the simulation
-SimFolder = 'rho1L20H100f39W15'
+SimFolder = 'L5_H100_W15_N10_f40'
 # Chose path to save bathymetry file
-PathSave = root+PathProject+"si3D/"+SimFolder
+PathSave = root+PathProject+SimFolder
 # Specify the name of the Lake
 LakeName = 'Stratification 1 for canonical basin'
 # Specify the start date of the simulation
 SimStartDate = '2018-05-26 00:00:00'
 TimeZone = 'America/Los_Angeles'
 # Define depth of lake
-H = 500 #[m] deep
+H = 100 #[m] deep
 # Chosse number of tracers
 NTracers = 0
 # Chose the type of thickness in layers and the profile of temperature in the vertical direction. Options are 'constant' and 'variable'
