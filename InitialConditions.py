@@ -78,8 +78,6 @@ elif TempProf == 'variable':
         T_CTD = np.append(T_CTD,T_CTD[-1])
 
 plt.plot(T_CTD,-z_CTD)
-plt.show()
-exit()
 # -------------- Beginning of code to create initial condition file --------------------
 if DeltaZ == 'constant':
     if TempProf == 'constant':
@@ -91,3 +89,4 @@ elif DeltaZ == 'variable':
         [T,z] = initCond4si3d(LakeName,SimStartDate,DeltaZ,TempProf,PathSave,NTracers,H,Tc,spacingMethod,dz0s,dz0b,dzxs,dzxb,n)
     elif TempProf == 'variable':
         [T,z] = initCond4si3d(LakeName,SimStartDate,DeltaZ,TempProf,PathSave,NTracers,H,z_CTD,T_CTD,spacingMethod,dz0s,dz0b,dzxs,dzxb,n)
+plt.show()
