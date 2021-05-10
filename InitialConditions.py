@@ -29,7 +29,7 @@ del root, user, func, FuncPath
 root = "S:/"
 PathProject = "si3D/"
 # Chose the name of folder for the simulation
-SimFolder = 'L5_H100_W15_N10_f40'
+SimFolder = 'L10_H100_W15_N10_f40'
 # Chose path to save bathymetry file
 PathSave = root+PathProject+SimFolder
 # Specify the name of the Lake
