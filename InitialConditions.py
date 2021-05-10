@@ -77,7 +77,9 @@ elif TempProf == 'variable':
         z_CTD = np.append(z_CTD,H)
         T_CTD = np.append(T_CTD,T_CTD[-1])
 
-
+plt.plot(T_CTD,-z_CTD)
+plt.show()
+exit()
 # -------------- Beginning of code to create initial condition file --------------------
 if DeltaZ == 'constant':
     if TempProf == 'constant':
