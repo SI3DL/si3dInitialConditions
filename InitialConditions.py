@@ -67,7 +67,7 @@ elif TempProf == 'variable':
     FileName = 'LakeTahoe_CTD.csv'
     os.chdir(PathFile)
     data = pd.read_csv(FileName)
-    z_CTD = data['depth'].to_numpy()
+    z_CTD = data['Depth'].to_numpy()
     T_CTD = data['T'].to_numpy()
     del data
     if np.max(z_CTD) < H/2:
