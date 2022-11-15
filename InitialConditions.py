@@ -40,7 +40,7 @@ SimStartDate = '2019-06-01 04:00:00' # IN UTC BUT CONSIDER SIMS ARE IN LOCAL TIM
 TimeZone = 'America/Toronto'
 # Define depth of lake
 H = 85 #[m] deep
-# Chosse number of tracers
+# Choose number of tracers
 NTracers = 2
 # Chose the type of thickness in layers and the profile of temperature in the vertical direction. Options are 'constant' and 'variable'
 DeltaZ = 'variable'
@@ -51,7 +51,7 @@ if DeltaZ == 'constant':
 elif DeltaZ == 'variable':
     # Chose the layer thickness method. Current options are: 'sbconc', 'surfvarBotconsta' and 'exp' where the first concentrates the specified minimum thickess at surface and bottom, and the latter has the finest layers at the surface.
     spacingMethod = 'surfvarBotconsta'
-    # Initial dx of top and bottom layers. Where the bottom is only used if sbconc method is used.
+    # Initial dz of top and bottom layers. Where the bottom is only used if sbconc method is used.
     dz0s = 0.2
     dz0b = 0.5
     # Specify constant spacing as layer thickness increases
